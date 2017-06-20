@@ -19,7 +19,7 @@ public class VPApplication extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
-        CrashHandler crashHandler=CrashHandler.getInstance();
-        crashHandler.init(this);
+       /* CrashHandler crashHandler=CrashHandler.getInstance();
+        crashHandler.init(this);*/
     }
 }
