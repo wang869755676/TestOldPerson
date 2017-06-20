@@ -32,14 +32,14 @@ public class PermissionHandle {
     public static final String PERMISSION_WRITE_EXTERNAL_STORAGE = Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 
-    static void requestPermission(Activity activity,String permission,int requestCode,PermissionListener listener){
-        if(PermissionUtils.hasSelfPermissions(activity)){
+    static void requestPermission(Activity activity,int requestCode,PermissionListener listener,String... permission){
+        if(PermissionUtils.hasSelfPermissions(activity,permission)){
             listener.permissionGrand(requestCode);
         }else {
             if(PermissionUtils.shouldShowRequestPermissionRationale(activity,permission)){
                 listener.permissionTip(requestCode);
             }else{
-                ActivityCompat.requestPermissions(activity, new String[]{permission},requestCode);
+                ActivityCompat.requestPermissions(activity, permission,requestCode);
 
             }
         }

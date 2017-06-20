@@ -55,7 +55,8 @@ public class PermissionFragment extends Fragment {
     }
 
     public void takePicture(View view) {
-       PermissionHandle.requestPermission(getActivity(), Manifest.permission.CAMERA, 1, new PermissionListener() {
+
+       PermissionHandle.requestPermission(getActivity(), 1, new PermissionListener() {
            @RequiresApi(api = Build.VERSION_CODES.N)
            @Override
            public void permissionGrand(int requestCode) {
@@ -88,7 +89,6 @@ public class PermissionFragment extends Fragment {
            public void permissionTip(int requestCode) {
                Log.e("===="," permissionTip");
            }
-       });
-
+       },new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CALL_PHONE});
     }
 }
