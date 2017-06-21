@@ -53,6 +53,7 @@ public class PermissionHandle {
         //requestResult(activity, requestCode, permissions, grantResults);
     }
     private static void requestResult(Activity activity, int requestCode, String[] permissions, int[] grantResults,PermissionListener listener) {
+
         if (PermissionUtils.verifyPermissions(grantResults)) {
           listener.permissionGrand(requestCode);
         } else {
