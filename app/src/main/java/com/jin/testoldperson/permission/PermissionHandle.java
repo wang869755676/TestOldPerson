@@ -2,8 +2,13 @@ package com.jin.testoldperson.permission;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by my on 2017/6/20.
@@ -44,5 +49,18 @@ public class PermissionHandle {
             }
         }
     }
-
+    public static void onRequestPermissionsResult(Activity activity, int requestCode, String[] permissions, int[] grantResults) {
+        //requestResult(activity, requestCode, permissions, grantResults);
+    }
+    private static void requestResult(Activity activity, int requestCode, String[] permissions, int[] grantResults,PermissionListener listener) {
+        if (PermissionUtils.verifyPermissions(grantResults)) {
+          listener.permissionGrand(requestCode);
+        } else {
+            if (!PermissionUtils.shouldShowRequestPermissionRationale(activity, PermissionHandle.PERMISSION_CAMERA)) {
+              listener.permissionNeverAsk(requestCode);
+            } else {
+                listener.permissionDeny(requestCode);
+            }
+        }
+    }
 }
