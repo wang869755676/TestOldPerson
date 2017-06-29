@@ -6,9 +6,10 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 
-import com.netease.nim.chatroom.demo.permission.annotation.OnMPermissionDenied;
-import com.netease.nim.chatroom.demo.permission.annotation.OnMPermissionGranted;
-import com.netease.nim.chatroom.demo.permission.annotation.OnMPermissionNeverAskAgain;
+
+import com.jin.testoldperson.mpermission.annotation.OnMPermissionDenied;
+import com.jin.testoldperson.mpermission.annotation.OnMPermissionGranted;
+import com.jin.testoldperson.mpermission.annotation.OnMPermissionNeverAskAgain;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
