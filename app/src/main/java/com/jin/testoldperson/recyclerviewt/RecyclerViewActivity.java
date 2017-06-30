@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jin.testoldperson.R;
+import com.jin.testoldperson.app.CheckApkExist;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        CheckApkExist.getAllPagcke(getApplicationContext());
         setContentView(R.layout.activity_recycler_view);
         rv = (RecyclerView) findViewById(R.id.rv);
         datas = new ArrayList<>();
