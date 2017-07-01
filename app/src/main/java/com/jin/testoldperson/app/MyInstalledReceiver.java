@@ -17,9 +17,7 @@ public class MyInstalledReceiver extends BroadcastReceiver {
   
             Log.i("homer", "安装了 :" + packageName);
 
-            final IWXAPI api = WXAPIFactory.createWXAPI(context, null);
-            // 将该app注册到微信
-            api.registerApp(Constants.APP_ID);
+            WxUtils.getInstance().register(context,Constants.APP_ID);
         }  
   
         if (intent.getAction().equals("android.intent.action.PACKAGE_REMOVED")) {   // uninstall  

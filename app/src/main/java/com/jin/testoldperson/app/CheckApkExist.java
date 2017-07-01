@@ -19,6 +19,7 @@ public class CheckApkExist {
             PackageInfo info = context.getPackageManager()
                     .getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
 
+
             return true;
         } catch (PackageManager.NameNotFoundException e) {
             return false;
@@ -32,6 +33,17 @@ public class CheckApkExist {
         for ( int i = 0; i < pinfo.size(); i++ )
         {
             Log.e("===",pinfo.get(i).packageName+"----------");
+        }
+
+    }
+
+    public static Context getOtherContext(Context context,String packageName){
+        try {
+            Context c = context.createPackageContext(packageName, Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);
+               return c;
+
+        } catch (PackageManager.NameNotFoundException e) {
+            return null;
         }
 
     }
