@@ -16,4 +16,8 @@
         android:layout_height="127dp"
         android:text="拍照" />
 
+    <com.jin.testoldperson.paint.MyView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </FrameLayout>

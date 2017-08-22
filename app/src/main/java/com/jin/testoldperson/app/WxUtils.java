@@ -27,6 +27,6 @@ public class WxUtils {
     public void register(Context context,String appID)
     {
         iwxapi=WXAPIFactory.createWXAPI(context,appID);
-        iwxapi.registerApp(appID);
+       // iwxapi.registerApp(appID);
     }
 }

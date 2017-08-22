@@ -51,7 +51,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(Adpter.ViewHolder holder, int position) {
-            holder.item.setText(datas.get(position));
+          //  holder.item.setText(datas.get(position));
         }
 
         @Override
@@ -60,11 +60,11 @@ public class RecyclerViewActivity extends AppCompatActivity {
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            public TextView item;
+            //public TextView item;
 
             public ViewHolder(View itemView) {
                 super(itemView);
-                item = (TextView) itemView;
+               // item = (TextView) itemView;
             }
         }
     }
