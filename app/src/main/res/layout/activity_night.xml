@@ -5,14 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
+    android:orientation="vertical"
     tools:context="com.jin.testoldperson.night.NightActivity">
 
     <TextView
-        android:onClick="changeTheme"
-        android:textColor="@color/tv"
-        android:textSize="18sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="切换主题" />
+        android:onClick="changeTheme"
+        android:text="切换主题"
+        android:textColor="@color/tv"
+        android:textSize="18sp" />
 
+    <com.jin.testoldperson.scroller.CustomView
+        android:id="@+id/custom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="move"
+            android:text="可移动的button" />
+    </com.jin.testoldperson.scroller.CustomView>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
 </LinearLayout>
