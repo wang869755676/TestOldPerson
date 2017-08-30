@@ -1,5 +1,6 @@
 package com.jin.testoldperson.night;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -83,6 +84,14 @@ public class NightActivity extends AppCompatActivity {
             // blah blah
         }
         recreate();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        startActivity(new Intent(this,
+                SecondActivity.class));
     }
 
     public void move(View view) {
