@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.jin.testoldperson.R;
+import com.nineoldandroids.view.ViewHelper;
 
 public class DesigenActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,6 +50,7 @@ public class DesigenActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+       // ViewHelper.setTranslationX(view, float);
     }
 
     @Override
