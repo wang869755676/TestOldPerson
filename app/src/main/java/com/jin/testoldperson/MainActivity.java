@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.os.UserManagerCompat;
 import android.util.Log;
 
 import com.jin.testoldperson.permission.PermissionHandle;
@@ -20,19 +21,21 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        PermissionHandle.onRequestPermissionsResult(this,requestCode,permissions,grantResults);
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    /*
         switch (requestCode) {
             case 1:
                 if (PermissionUtils.verifyPermissions(grantResults)) {
-                    Log.e("====", "permissionGrand");
+                    Log.e("====", "permissionGrand================");
                 } else {
                     if (!PermissionUtils.shouldShowRequestPermissionRationale(this, PermissionHandle.PERMISSION_CAMERA)) {
-                        Log.e("====", " permissionNeverAsk");
+                        Log.e("====", " permissionNeverAsk===========");
                     } else {
-                        Log.e("====", " permissionDeny");
+                        Log.e("====", " permissionDeny==============");
                     }
                 }
                 break;
-        }
+        }*/
     }
 }

@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 import com.jin.testoldperson.R;
 import com.nineoldandroids.view.ViewHelper;
@@ -51,6 +55,25 @@ public class DesigenActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
        // ViewHelper.setTranslationX(view, float);
+
+
+        EditText editText= (EditText) findViewById(R.id.edit_query);
+        editText.setFilters(new InputFilter[]{new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+                if (source.equals(".") && dest.toString().length() == 0) {
+                    return "0.";
+                }
+                if (dest.toString().contains(".")) {
+                    int index = dest.toString().indexOf(".");
+                    int mlength = dest.toString().substring(index).length();
+                    if (mlength == 3) {
+                        return "";
+                    }
+                }
+                return null;
+            }
+        }});
     }
 
     @Override
