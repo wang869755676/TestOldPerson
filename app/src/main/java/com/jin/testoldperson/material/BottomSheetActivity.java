@@ -11,6 +11,7 @@ import com.jin.testoldperson.R;
 public class BottomSheetActivity extends AppCompatActivity {
 
     private BottomSheetBehavior mBottomSheetBehavior;
+    private View roubdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +21,11 @@ public class BottomSheetActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        roubdView=findViewById(R.id.round);
         findViewById(R.id.btn_bottom_sheet_control).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                 AnmUtils.roundLoadBig(roubdView);
                 if (v.getId() == R.id.btn_bottom_sheet_control) {
                     if ( mBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_HIDDEN) {
                         mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);

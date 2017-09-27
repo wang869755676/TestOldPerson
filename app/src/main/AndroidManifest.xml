@@ -64,22 +64,21 @@
             </intent-filter>
         </activity>
         <activity android:name=".touchevent.EventActivity" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".night.NightActivity" />
+        <activity android:name=".night.SecondActivity" />
+        <activity
+            android:name=".material.DesigenActivity"
+            android:label="@string/title_activity_desigen"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".material.BottomSheetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".night.NightActivity">
-        </activity>
-        <activity android:name=".night.SecondActivity" />
-        <activity
-            android:name=".desigen.DesigenActivity"
-            android:label="@string/title_activity_desigen"
-            android:theme="@style/AppTheme">
-
-        </activity>
+        <activity android:name=".material.Main2Activity"></activity>
     </application>
 
 </manifest>
