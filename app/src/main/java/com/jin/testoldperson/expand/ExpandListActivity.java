@@ -2,6 +2,8 @@ package com.jin.testoldperson.expand;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.widget.ExpandableListView;
 
 import com.jin.testoldperson.R;
@@ -39,5 +41,11 @@ public class ExpandListActivity extends AppCompatActivity {
 
         expandAdapter = new ExpandAdapter(dataList, this);
         listView.setAdapter(new ExpandAdapter(dataList, this));
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        Log.e("===",keyCode+" 按键code");
+        return super.onKeyDown(keyCode, event);
     }
 }
