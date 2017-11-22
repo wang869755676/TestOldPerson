@@ -2,17 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:orientation="vertical">
 
     <TextView
-        android:layout_marginLeft="60dp"
-        android:id="@+id/label_expand_group"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
-    <Button
-        android:background="@drawable/ic_favorite_black_24dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="切换的布局"
+        android:textStyle="bold" />
 </LinearLayout>

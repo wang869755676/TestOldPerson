@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/ic_favorite_black_24dp">
+    <target
+        android:name="arrow_left"
+        android:animation="@anim/anim_left" />
+
+    <target
+        android:name="arrow_right"
+        android:animation="@anim/anim_right" />
+
+</animated-vector>
