@@ -1,49 +1,60 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:ignore="MergeRootFrame"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="MergeRootFrame">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/go_button"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go"
-            android:id="@+id/go_button"
-            android:onClick="buttonClicked"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentTop="true"
+            android:onClick="buttonClicked"
+            android:text="Go" />
 
         <!-- Change android text below to "http://www.w3schools.com/ajax/default.ASP" to test AJAX -->
         <EditText
+            android:id="@+id/addressView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/go_button"
-            android:text="http://cgi-lib.berkeley.edu/ex/simple-form.html"
-            android:id="@+id/addressView"
-            android:layout_centerVertical="true" />
+            android:text="http://cgi-lib.berkeley.edu/ex/simple-form.html" />
     </RelativeLayout>
 
     <WebView
-        android:visibility="gone"
+        android:id="@+id/webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/webView" />
+        android:visibility="gone" />
+
     <com.jin.testoldperson.textview.SlantedTextView
         android:id="@+id/test"
         android:layout_width="80dp"
         android:layout_height="80dp"
         app:slantedBackgroundColor="#ff0000"
-        app:slantedMode="left_bottom"
         app:slantedLength="20dp"
-        app:slantedTextSize="10sp"
-        app:slantedText="PHP"/>
+        app:slantedMode="left_bottom"
+        app:slantedText="PHP"
+        app:slantedTextSize="10sp" />
+
+    <EditText
+        android:maxEms=""
+        android:inputType="phone"
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/go_button"
+        />
 </LinearLayout>
