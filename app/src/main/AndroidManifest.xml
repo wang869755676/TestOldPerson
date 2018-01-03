@@ -17,7 +17,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
-
     <application
         android:name=".video.VPApplication"
         android:allowBackup="true"
@@ -47,7 +46,13 @@
         <activity
             android:name=".recyclerviewt.RecyclerViewActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".app.WxapiActivity"
             android:launchMode="singleTop" />
@@ -71,19 +76,17 @@
         <activity
             android:name=".material.DesigenActivity"
             android:label="@string/title_activity_desigen"
-            android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".material.BottomSheetActivity" />
+        <activity android:name=".expand.ExpandListActivity" />
+        <activity android:name=".webView.MainActivity"></activity>
+        <activity android:name=".Process.LiveActivity" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <service
+            android:name=".Process.LiveService"
+            android:process=":live_service" />
 
-        </activity>
-        <activity android:name=".material.BottomSheetActivity"></activity>
-        <activity android:name=".expand.ExpandListActivity"></activity>
-
-
-        <activity android:name=".webView.MainActivity">
+        <activity android:name=".ViewAnimator.ViewAnimatorActivity">
 
         </activity>
     </application>

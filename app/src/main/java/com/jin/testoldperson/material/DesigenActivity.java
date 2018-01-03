@@ -1,5 +1,6 @@
 package com.jin.testoldperson.material;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +20,7 @@ import android.view.MenuItem;
 import android.widget.EditText;
 
 import com.jin.testoldperson.R;
+import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.view.ViewHelper;
 
 public class DesigenActivity extends AppCompatActivity

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageSwitcher
+            android:outAnimation="@anim/out_left"
+            android:inAnimation="@anim/in_right"
+            android:id="@+id/imageSwitcher"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"></ImageSwitcher>
+
+        <TextSwitcher
+            android:outAnimation="@anim/out_left"
+            android:inAnimation="@anim/in_right"
+            android:layout_height="30dp"
+            android:id="@+id/textSwitcher"
+            android:layout_width="match_parent"></TextSwitcher>
+
+        <ViewFlipper
+            android:outAnimation="@anim/out_left"
+            android:inAnimation="@anim/in_right"
+            android:id="@+id/viewFlipper"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+            <ImageView
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:textColor="@color/colorPrimary"
+                android:gravity="center"
+                android:text="范德萨发生地方胜多负少"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </ViewFlipper>
+
+    </LinearLayout>
+</ScrollView>
+
