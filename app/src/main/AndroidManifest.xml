@@ -47,11 +47,7 @@
             android:name=".recyclerviewt.RecyclerViewActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".app.WxapiActivity"
@@ -76,18 +72,26 @@
         <activity
             android:name=".material.DesigenActivity"
             android:label="@string/title_activity_desigen"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity android:name=".material.BottomSheetActivity" />
         <activity android:name=".expand.ExpandListActivity" />
-        <activity android:name=".webView.MainActivity"></activity>
+        <activity android:name=".webView.MainActivity" />
         <activity android:name=".Process.LiveActivity" />
 
         <service
             android:name=".Process.LiveService"
             android:process=":live_service" />
 
-        <activity android:name=".ViewAnimator.ViewAnimatorActivity">
+        <activity android:name=".ViewAnimator.ViewAnimatorActivity" />
+        <activity android:name=".material.Main2Activity">
 
+        </activity>
+        <activity android:name=".scoket.ScoketActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
