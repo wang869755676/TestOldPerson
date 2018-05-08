@@ -10,35 +10,44 @@
         android:orientation="vertical">
 
         <ImageSwitcher
-            android:outAnimation="@anim/out_left"
-            android:inAnimation="@anim/in_right"
             android:id="@+id/imageSwitcher"
             android:layout_width="match_parent"
-            android:layout_height="200dp"></ImageSwitcher>
+            android:layout_height="200dp"
+            android:inAnimation="@anim/in_right"
+            android:outAnimation="@anim/out_left"></ImageSwitcher>
 
         <TextSwitcher
-            android:outAnimation="@anim/out_left"
-            android:inAnimation="@anim/in_right"
-            android:layout_height="30dp"
             android:id="@+id/textSwitcher"
-            android:layout_width="match_parent"></TextSwitcher>
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:inAnimation="@anim/in_right"
+            android:outAnimation="@anim/out_left"></TextSwitcher>
 
         <ViewFlipper
-            android:outAnimation="@anim/out_left"
-            android:inAnimation="@anim/in_right"
             android:id="@+id/viewFlipper"
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="120dp"
+            android:inAnimation="@anim/in_right"
+            android:outAnimation="@anim/out_left">
+
             <ImageView
-                android:src="@mipmap/ic_launcher"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_launcher" />
+
             <TextView
-                android:textColor="@color/colorPrimary"
-                android:gravity="center"
-                android:text="范德萨发生地方胜多负少"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="范德萨发生地方胜多负少s你带伞了肯定是免费送劳动模范失地农民方式打开分内的事款福克斯的反馈"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="第三个发的广泛地范德萨发生地方胜多负少s你带伞了肯定是免费送劳动模范失地农民方式打开分内的事款福克斯的反馈"
+                android:textColor="@color/colorPrimary" />
         </ViewFlipper>
 
     </LinearLayout>

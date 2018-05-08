@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
@@ -34,6 +35,8 @@ public class ViewAnimatorActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       // WebView
+
         setContentView(R.layout.activity_view_animator);
         imageSwitcher= (ImageSwitcher) findViewById(R.id.imageSwitcher);
         textSwitcher= (TextSwitcher) findViewById(R.id.textSwitcher);
@@ -77,6 +80,7 @@ public class ViewAnimatorActivity extends Activity {
 
         viewFlipper.isAutoStart();
         viewFlipper.isFlipping();
+        viewFlipper.setFlipInterval(3000);
         viewFlipper.startFlipping();
 
         runnable=new Runnable() {
