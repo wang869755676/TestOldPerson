@@ -13,9 +13,9 @@ public class TestJava {
 
     public void testBasicType() {
         System.out.println(3 * 0.1f);
-        System.out.println(4 * 0.1f);
-        System.out.println(5 * 0.1f);
-        System.out.println(6 * 0.1f);
+        System.out.println(4 * 0.1);
+        System.out.println(5 * 0.1);
+        System.out.println(6 * 0.1);
         System.out.println(0.3);
 
 

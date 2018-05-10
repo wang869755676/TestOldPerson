@@ -1,9 +1,12 @@
 package com.jin.testoldperson.material;
 
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 
+import com.jin.testoldperson.BLACKTECH.HomeKeyEventBroadcoast;
 import com.jin.testoldperson.R;
 
 import java.util.Arrays;
@@ -23,6 +26,8 @@ public class Main2Activity extends AppCompatActivity {
             }
         }
         str.toCharArray();
+        HomeKeyEventBroadcoast receiver = new HomeKeyEventBroadcoast();
+        registerReceiver(receiver, new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS));
 
 
     }

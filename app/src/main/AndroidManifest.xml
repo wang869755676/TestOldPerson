@@ -87,7 +87,6 @@
         </activity>
         <activity
             android:name=".material.Main2Activity"
-            android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustResize|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -112,6 +111,8 @@
                 android:name="android.accessibilityservice"
                 android:resource="@xml/my"></meta-data>
         </service>
+
+
     </application>
 
 </manifest>
