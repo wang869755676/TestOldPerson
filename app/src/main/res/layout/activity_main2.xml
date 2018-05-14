@@ -5,10 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.jin.testoldperson.material.Main2Activity">
+
     <EditText
-        android:imeOptions="actionDone"
-       android:layout_gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_height="40dp" />
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:imeOptions="actionDone" />
+
+    <TextView
+        android:text="暖风哈市 阿杀毒但萨达大声叫单身大时间到了到那时来得及as大数据量的看见爱上第三方你速度快买地方能数量的 发送到您李开复疯掉了书法家 否定设计了"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2" />
 
 </FrameLayout>
