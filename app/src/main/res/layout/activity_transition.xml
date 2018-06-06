@@ -12,11 +12,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <com.jin.testoldperson.textview.AddressEditText
+        android:background="@drawable/a"
+        android:id="@+id/addressEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:drawableLeft="@mipmap/icon_right"
+        android:text="dfsdfsdfsfds" />
+
+    <com.jin.testoldperson.textview.AddressEditText
+        android:background="@drawable/a"
+        android:drawableLeft="@mipmap/icon_right"
+        android:layout_width="match_parent"
+        android:text=""
+        android:layout_height="50dp" />
+
     <LinearLayout
-        android:layout_weight="1"
         android:id="@+id/buttons_group"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <LinearLayout
@@ -52,10 +67,14 @@
                 android:layout_weight="1"
                 android:text="Scene four" />
         </LinearLayout>
+
     </LinearLayout>
+
+
+
     <com.jin.testoldperson.material.animation.MyAnimView
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
 </LinearLayout>

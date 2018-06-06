@@ -1,9 +1,10 @@
-package com.jin.testoldperson;
+package com.jin.testoldperson.dragger;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 
+import com.jin.testoldperson.R;
 import com.jin.testoldperson.permission.PermissionHandle;
 
 public class MainActivity extends FragmentActivity {
@@ -12,7 +13,9 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //AsyncTask
+        DaggerActivityComponent.builder()
+                .activityModule(new ActivityModule(this)).build()
+                .inject(MainActivity.this);
 
     }
 

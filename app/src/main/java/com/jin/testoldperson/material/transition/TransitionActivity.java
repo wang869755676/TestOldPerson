@@ -3,7 +3,6 @@ package com.jin.testoldperson.material.transition;
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -112,6 +111,7 @@ public class TransitionActivity extends Activity {
                         inflateTransition(R.transition.slide_and_changebounds_sequential_with_interpolators));
             }
         });*/
+
 
         viewsToAnimate.add(button1);
         viewsToAnimate.add(button2);
