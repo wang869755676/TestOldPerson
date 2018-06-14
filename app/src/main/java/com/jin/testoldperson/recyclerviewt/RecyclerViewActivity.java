@@ -2,13 +2,12 @@ package com.jin.testoldperson.recyclerviewt;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -18,7 +17,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
-import android.widget.ViewFlipper;
 import android.widget.ViewSwitcher;
 
 import com.jin.testoldperson.Process.LiveActivity;
@@ -26,6 +24,7 @@ import com.jin.testoldperson.R;
 import com.jin.testoldperson.app.CheckApkExist;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class RecyclerViewActivity extends AppCompatActivity {
@@ -54,13 +53,45 @@ public class RecyclerViewActivity extends AppCompatActivity {
         datas.add("1");
 
         rv.setItemAnimator(new DefaultItemAnimator());
-        Adpter adpter = new Adpter();
+        final Adpter adpter = new Adpter();
         rv.setLayoutManager(new LinearLayoutManager(this));
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new CustomItemTouchHelperCallback(new OnItemTouchCallbackListener() {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                if (datas == null) {
+                    return false;
+                }
+                //处理拖动排序
+                //使用Collection对数组进行重排序，目的是把我们拖动的Item换到下一个目标Item的位置
+                Collections.swap(datas, viewHolder.getAdapterPosition(), target.getAdapterPosition());
+                //通知Adapter它的Item发生了移动
+                adpter.notifyItemMoved(viewHolder.getAdapterPosition(), target.getAdapterPosition());
+                return true;
+
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+
+                if (datas == null) {
+                    return;
+                }
+                //处理滑动删除
+                //直接从数据中删除该Item的数据
+                datas.remove(viewHolder.getAdapterPosition());
+                //通知Adapter有Item被移除了
+                adpter.notifyItemRemoved(viewHolder.getAdapterPosition());
+            }
+
+
+        }));
+        itemTouchHelper.attachToRecyclerView(rv);
+
         rv.setAdapter(adpter);
         startService(new Intent(this, LiveActivity.class));
-
-
     }
+
 
     private class Adpter extends RecyclerView.Adapter<Adpter.ViewHolder> {
 

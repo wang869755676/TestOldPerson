@@ -25,11 +25,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".material.transition.TransitionActivity">
+
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
 
         <provider
@@ -55,7 +58,14 @@
         <activity
             android:name=".recyclerviewt.RecyclerViewActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".app.WxapiActivity"
             android:launchMode="singleTop" />
@@ -89,12 +99,11 @@
             android:name=".Process.LiveService"
             android:process=":live_service" />
 
-        <activity android:name=".ViewAnimator.ViewAnimatorActivity"></activity>
+        <activity android:name=".ViewAnimator.ViewAnimatorActivity" />
         <activity
             android:name=".material.Main2Activity"
-            android:windowSoftInputMode="adjustResize|stateHidden">
-        </activity>
-        <activity android:name=".scoket.ScoketActivity"></activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".scoket.ScoketActivity" />
         <activity android:name=".Bluetooth.BluetoothActivity" />
 
         <service
@@ -112,7 +121,20 @@
                 android:resource="@xml/my" />
         </service>
 
+        <activity android:name=".image.GlideActivity">
+          <!--  <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity android:name=".material.TestMaterialActivity">
+           <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
     </application>
 
 </manifest>
