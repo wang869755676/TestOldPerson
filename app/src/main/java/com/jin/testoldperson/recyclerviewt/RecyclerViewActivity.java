@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.TextUtils;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -153,5 +154,13 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
             }
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode==KeyEvent.KEYCODE_BACK ||keyCode==KeyEvent.KEYCODE_HOME){
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

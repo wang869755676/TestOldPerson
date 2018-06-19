@@ -78,7 +78,7 @@
         android:textSize="18sp"
         android:gravity="center"
         android:text="头条"
-        app:layout_behavior="@string/customBehaivor"
+        app:layout_behavior="@string/bottom_sheet_behavior"
         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="50dp"
