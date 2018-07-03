@@ -1,11 +1,15 @@
 package com.jin.testoldperson.material;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.MessageQueue;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.LruCache;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -111,6 +115,12 @@ public class TestZhifubaoActivity extends AppCompatActivity {
         container= (LinearLayout) findViewById(R.id.container);
       /*  View view=LayoutInflater.from(this).inflate(R.layout.item_expnad_group,container);
         container.addView(view);*/
+
+
+      /*android  handler*/
+       // MessageQueue
+        //Looper
+       // Handler
 
 
     }

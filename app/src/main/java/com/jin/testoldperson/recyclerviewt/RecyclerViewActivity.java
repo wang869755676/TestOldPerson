@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -41,21 +42,22 @@ public class RecyclerViewActivity extends AppCompatActivity {
         rv = (RecyclerView) findViewById(R.id.rv);
         datas = new ArrayList<>();
         datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
-        datas.add("1");
+        datas.add("2");
+        datas.add("3");
+        datas.add("5");
+        datas.add("5");
+        datas.add("6");
+        datas.add("7");
+        datas.add("8");
+        datas.add("9");
+        datas.add("10");
+        datas.add("11");
+        datas.add("12");
+
 
         rv.setItemAnimator(new DefaultItemAnimator());
         final Adpter adpter = new Adpter();
-        rv.setLayoutManager(new LinearLayoutManager(this));
+        rv.setLayoutManager(new GridLayoutManager(this,2));
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new CustomItemTouchHelperCallback(new OnItemTouchCallbackListener() {
             @Override
@@ -104,6 +106,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(final Adpter.ViewHolder holder, int position) {
             holder.textView.setSelected(true);
+            holder.textView.setText(datas.get(position)+"fdgfcgdgdfgdfgd");
             holder.switcher.removeAllViews();
             holder.switcher.setFactory(new ViewSwitcher.ViewFactory() {
                 @Override
