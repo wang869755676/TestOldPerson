@@ -35,10 +35,15 @@ android {
     }
     productFlavors {
     }
-
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
+
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'fm.jiecao:jiecaovideoplayer:5.5.4'
     compile 'com.android.support:recyclerview-v7:25.3.1'
@@ -58,4 +63,10 @@ dependencies {
     /*dragger的使用*/
     annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
     compile 'com.google.dagger:dagger:2.4'
+
+/*Glide 图片加载*/
+    compile('com.github.bumptech.glide:glide:4.7.1')
+            { exclude group: "com.android.support" }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    compile(name: 'liblinphone-sdk-release', ext: 'aar')
 }
